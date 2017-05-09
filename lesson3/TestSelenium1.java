@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
@@ -20,7 +21,7 @@ public class TestSelenium {
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.gecko.driver", "drv/geckodriver.exe");
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         baseUrl = "https://ipizza.ru/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
@@ -31,7 +32,7 @@ public class TestSelenium {
 
         //1. Перейти по ссылке https://ipizza.ru/
         driver.get("https://ipizza.ru/");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         //Ожидание
         Wait<WebDriver> wait = new WebDriverWait(driver, 7, 1000);
@@ -113,7 +114,7 @@ public class TestSelenium {
         String actualValue = driver.findElement(By.xpath(".//*[@id='custumerName']")).getAttribute("value");
         String expectedValue = "Лев";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
-        expectedValue, actualValue);
+                expectedValue, actualValue);
 
         actualValue = driver.findElement(By.xpath(".//*[@id='custumerPhone']")).getAttribute("value");
         expectedValue = "+7 (495) 123-12-23";
@@ -154,7 +155,7 @@ public class TestSelenium {
 
     }
 
-        @After
+    @After
     public void tearDown() throws Exception {
         //driver.wait();
         //driver.quit();
