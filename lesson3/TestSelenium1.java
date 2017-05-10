@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestSelenium {
+public class TestSelenium1 {
     private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
@@ -86,67 +86,67 @@ public class TestSelenium {
         //        Строение
         //        Подъезд
         //        Этаж
-        driver.findElement(By.xpath(".//*[@id='custumerName']")).clear();
-        driver.findElement(By.xpath(".//*[@id='custumerName']")).sendKeys("Лев");
+        driver.findElement(By.xpath("//*[@id='custumerName']")).clear();
+        driver.findElement(By.xpath("//*[@id='custumerName']")).sendKeys("Лев");
 
-        driver.findElement(By.xpath(".//*[@id='custumerPhone']")).clear();
-        driver.findElement(By.xpath(".//*[@id='custumerPhone']")).sendKeys("495-123-12-23");
+        driver.findElement(By.xpath("//*[@id='custumerPhone']")).clear();
+        driver.findElement(By.xpath("//*[@id='custumerPhone']")).sendKeys("495-123-12-23");
 
-        driver.findElement(By.xpath(".//*[@id='custumerStreet']")).clear();
-        driver.findElement(By.xpath(".//*[@id='custumerStreet']")).sendKeys("1-ая линия");
+        driver.findElement(By.xpath("//*[@id='custumerStreet']")).clear();
+        driver.findElement(By.xpath("//*[@id='custumerStreet']")).sendKeys("1-ая линия");
 
-        driver.findElement(By.xpath(".//*[@id='custumerHome']")).clear();
-        driver.findElement(By.xpath(".//*[@id='custumerHome']")).sendKeys("17");
+        driver.findElement(By.xpath("//*[@id='custumerHome']")).clear();
+        driver.findElement(By.xpath("//*[@id='custumerHome']")).sendKeys("17");
 
-        driver.findElement(By.xpath(".//*[@name='custumer[building]']")).clear();
-        driver.findElement(By.xpath(".//*[@name='custumer[building]']")).sendKeys("3");
+        driver.findElement(By.xpath("//*[@name='custumer[building]']")).clear();
+        driver.findElement(By.xpath("//*[@name='custumer[building]']")).sendKeys("3");
 
-        driver.findElement(By.xpath(".//*[@name='custumer[structure]']")).clear();
-        driver.findElement(By.xpath(".//*[@name='custumer[structure]']")).sendKeys("1");
+        driver.findElement(By.xpath("//*[@name='custumer[structure]']")).clear();
+        driver.findElement(By.xpath("//*[@name='custumer[structure]']")).sendKeys("1");
 
-        driver.findElement(By.xpath(".//*[@id='custumerPorch']")).clear();
-        driver.findElement(By.xpath(".//*[@id='custumerPorch']")).sendKeys("2");
+        driver.findElement(By.xpath("//*[@id='custumerPorch']")).clear();
+        driver.findElement(By.xpath("//*[@id='custumerPorch']")).sendKeys("2");
 
-        driver.findElement(By.xpath(".//*[@id='custumerFloor']")).clear();
-        driver.findElement(By.xpath(".//*[@id='custumerFloor']")).sendKeys("8");
+        driver.findElement(By.xpath("//*[@id='custumerFloor']")).clear();
+        driver.findElement(By.xpath("//*[@id='custumerFloor']")).sendKeys("8");
 
         //12. Проверить, что все поля заполнились, соответвующими значениями
-        String actualValue = driver.findElement(By.xpath(".//*[@id='custumerName']")).getAttribute("value");
+        String actualValue = driver.findElement(By.xpath("//*[@id='custumerName']")).getAttribute("value");
         String expectedValue = "Лев";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
 
-        actualValue = driver.findElement(By.xpath(".//*[@id='custumerPhone']")).getAttribute("value");
+        actualValue = driver.findElement(By.xpath("//*[@id='custumerPhone']")).getAttribute("value");
         expectedValue = "+7 (495) 123-12-23";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
 
-        actualValue = driver.findElement(By.xpath(".//*[@id='custumerStreet']")).getAttribute("value");
+        actualValue = driver.findElement(By.xpath("//*[@id='custumerStreet']")).getAttribute("value");
         expectedValue = "1-ая линия";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
 
-        actualValue = driver.findElement(By.xpath(".//*[@id='custumerHome']")).getAttribute("value");
+        actualValue = driver.findElement(By.xpath("//*[@id='custumerHome']")).getAttribute("value");
         expectedValue = "17";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
 
-        actualValue = driver.findElement(By.xpath(".//*[@name='custumer[building]']")).getAttribute("value");
+        actualValue = driver.findElement(By.xpath("//*[@name='custumer[building]']")).getAttribute("value");
         expectedValue = "3";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
 
-        actualValue = driver.findElement(By.xpath(".//*[@name='custumer[structure]']")).getAttribute("value");
+        actualValue = driver.findElement(By.xpath("//*[@name='custumer[structure]']")).getAttribute("value");
         expectedValue = "1";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
 
-        actualValue = driver.findElement(By.xpath(".//*[@id='custumerPorch']")).getAttribute("value");
+        actualValue = driver.findElement(By.xpath("//*[@id='custumerPorch']")).getAttribute("value");
         expectedValue = "2";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
 
-        actualValue = driver.findElement(By.xpath(".//*[@id='custumerFloor']")).getAttribute("value");
+        actualValue = driver.findElement(By.xpath("//*[@id='custumerFloor']")).getAttribute("value");
         expectedValue = "8";
         assertEquals(String.format("Поле заполнено не верно. Ожидалось [%s]. Получено [%s]", expectedValue, actualValue),
                 expectedValue, actualValue);
